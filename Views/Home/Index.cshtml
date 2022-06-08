@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<h2>My Media</h2>
+<br />
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-8">
+            <h2>Description</h2>
+            <p>This is a media uploading system. It contains a Home page, Image page, About Me page and a Video page</p>
+            <p>The Home page is where you can upload files of different type and you can choose wheteher it is a document, video or an image file</p>
+            <p>About Me page contains the bio of the creator of this site</p>
+            <p>The Image page allows you to view images and gives you the option to either download or delete </p>
+            <p>The video page allows you to view different videos</p>
+        </div>
+        <div class="col-lg-4">
+            <h2>Option Selection</h2>
+            @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <div class="radio">
+                    <label><input type="radio" name="radiob" value="Document" checked />Document</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="radiob" value="Image" />Image</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="radiob" value="Video" />Video</label>
+                </div>
+                <input type="file" class="form-control" name="file" />
+                <br />
+                <input type="submit" value="submit" class="btn btn-ptimary"/>
+            }
+        </div>
+    </div>
+
+</div>

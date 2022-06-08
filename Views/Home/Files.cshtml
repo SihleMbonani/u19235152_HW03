@@ -1,0 +1,34 @@
+﻿@model List<u19235152_HW03.Models.FileModel>
+@using u19235152_HW03.Models
+@{
+    ViewBag.Title = "Files";
+}
+
+<h2>Document of any file type</h2>
+<h5>......"Media/Documents/" folder</h5>
+
+<div class="container-fluid">
+    <div class="row">
+        <table>
+            <thead>
+                <tr style="color:white; background-color:black">
+                    <th>File Name</th>
+                    <th>DOWNLOAD OPTION</th>
+                    <th>DELETE OPTION</th>
+                </tr>
+            </thead>
+            <tbody>
+              
+             @foreach(FileModel file in Model)
+            {
+               <tr>
+                   <td>@file.FileName</td>
+                 <td><button class="btn btn-success">Download</button> </td>
+                  <td><button class="btn btn-danger">Delete</button> </td>
+               </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</div>
+
